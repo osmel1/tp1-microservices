@@ -1,4 +1,11 @@
 # Microservice de Gestion des Comptes Bancaires
+**Presente par**: Oussama Elhachimi
+
+**Encadre par**: Pr. Mohamed YOUSSFI    
+
+**Filière**: II - Big Data & Cloud Computing
+
+--------
 
 Ce projet est un microservice Spring Boot pour la gestion des comptes bancaires. Il expose des API RESTful ainsi qu'une interface GraphQL. Le projet utilise une base de données en mémoire H2 et inclut une documentation OpenAPI/Swagger.
 
@@ -67,3 +74,23 @@ Accédez à l'URL suivante : [http://localhost:8081/swagger-ui/index.html](http:
 
 ### Spring Data Rest
 Spring Data Rest expose automatiquement les API CRUD pour l'entité Compte , il faut que ajouter l'annotation ```@RepositoryRestResource```
+#### Projections :
+
+Dans Spring Data Rest, une projection permet de contrôler et de personnaliser les données renvoyées par vos API REST. Au lieu de retourner l'ensemble des champs d'une entité, une projection permet de ne renvoyer que certains champs ou d'inclure des champs calculés.
+**Exemple:** 
+- **Sans Projection** :  
+Si vous n'utilisez pas de projection dans Spring Data Rest, l'API exposera tous les champs publics de l'entité, à l'exception de l'ID, qui est masqué par défaut pour des raisons de sécurité.
+![image](https://github.com/user-attachments/assets/93a7ddd9-041b-44c0-b244-8579a23d167e)
+
+- **Avec projection** :
+Lorsque vous utilisez une projection dans Spring Data Rest, seuls les attributs spécifiés dans la projection seront inclus dans la réponse .
+
+![projection](https://github.com/user-attachments/assets/cd810035-0baa-4449-bfcc-ffdcb7c3f123)
+
+![image](https://github.com/user-attachments/assets/7379e787-532e-4b89-b6c0-ecb9e325e9e0)
+
+### les DTOs et Mappers
+
+Créer les DTOs qui serviront à transférer les données entre les couches de l'application et à exposer les informations de manière sécurisée. Nous créerons également des Mappers pour effectuer la conversion entre les entités de la base de données et les DTOs.
+
+Les Dtos sont definit dans : [Dto Folder](src/main/java/ma/elhachimi/microserviceebank/dto/). 
